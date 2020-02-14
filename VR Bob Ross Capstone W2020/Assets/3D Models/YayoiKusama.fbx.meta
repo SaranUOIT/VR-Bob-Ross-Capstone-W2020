@@ -3,7 +3,47 @@ guid: 45963a99e576e9a48b45d0cdd91d6e59
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Eyes.004
+    second: {fileID: 2100000, guid: 0b26fd6802cf5f24ea8ea8562074687f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hair.004
+    second: {fileID: 2100000, guid: 7e57f442081da1f49afc8350581cdf59, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hair.005
+    second: {fileID: 2100000, guid: f39570a0fe662a449aae384be53ffdc6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material
+    second: {fileID: 2100000, guid: f41d20874d6b2da469bdcedf4b4e1697, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: No Name
+    second: {fileID: 2100000, guid: 486159d51af8d9e4caf11cc3c9c9b67c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pants.005
+    second: {fileID: 2100000, guid: 103450466c569f643800ca7745da1430, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pants.007
+    second: {fileID: 2100000, guid: 2ced2427e169dde4f829e83927a8b0a5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Skin.011
+    second: {fileID: 2100000, guid: 75121c1e3af2a424da26c3533036dfe0, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

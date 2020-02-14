@@ -3,7 +3,52 @@ guid: 0a14899abbd132b4a95ec8e5594207eb
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Eyes.003
+    second: {fileID: 2100000, guid: 059a360a1416f5440a1559be47f8cfd1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hair.005
+    second: {fileID: 2100000, guid: 12ac56616ffc468408924cd5297fff6d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: No Name
+    second: {fileID: 2100000, guid: 5c410065d4f1301448f3cbdffa432fa6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pants.008
+    second: {fileID: 2100000, guid: fcdaf150365206a43beb25a153af5165, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Skin
+    second: {fileID: 2100000, guid: 73e6e15891cc8d243892dfa868bf595d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Skin.001
+    second: {fileID: 2100000, guid: 8133a7d9dd46432459fb7d1d4e8f7bfd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Skin.007
+    second: {fileID: 2100000, guid: 05eb0b184f1fb5546b3905594398aa67, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Skin.010
+    second: {fileID: 2100000, guid: b008af7ae9ab71c418c7a14e931ed3da, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Skin.016
+    second: {fileID: 2100000, guid: 3f8a729f340d34445843e62e23d456d2, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
