@@ -141,7 +141,7 @@ public class CS_BAXTER_VR : MonoBehaviour
         channel1 = new Vector4(0, 0, 0, 0);
         channel2 = new Vector4(0, 0, 0, 0);
         InitializeShader();
-
+        channel1.Set(1, 0, 0, 0); channel2.Set(0, 0, 0, 0);
     }
 
     RenderTexture CreateRenderTexture(int w, int h, int type = 0)
@@ -435,7 +435,7 @@ public class CS_BAXTER_VR : MonoBehaviour
                                                           //if(IDX == 0 ) THETA = -DIR*Mathf.PI;
                                                           //while(THETA > Mathf.PI) THETA -= Mathf.PI;
                                                           //while(THETA < -Mathf.PI) THETA += Mathf.PI;
-            Debug.Log("IDX:" + IDX + " IDY:" + IDY + " Theta=" + angle * RAD2DEG);
+            //Debug.Log("IDX:" + IDX + " IDY:" + IDY + " Theta=" + angle * RAD2DEG);
 
             int bw = BRUSH_WIDTH;
             float bwf = (float)(bw / 2) / (float)brush.width;

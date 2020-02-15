@@ -11,12 +11,13 @@ public class OculusInput : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        bool triggerDown = OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger);
-        bool triggerUp = OVRInput.GetUp(OVRInput.Button.PrimaryIndexTrigger);
+        bool triggerDown = OVRInput.GetDown(OVRInput.Button.SecondaryIndexTrigger);
+        bool triggerUp = OVRInput.GetUp(OVRInput.Button.SecondaryIndexTrigger);
 
         if(triggerDown)
         {
             Mouse1 = true;
+            Debug.Log("Trigger Pressed");
         }
         if(triggerUp)
         {
