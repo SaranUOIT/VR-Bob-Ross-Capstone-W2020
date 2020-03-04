@@ -109,7 +109,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Convex: 0
-  m_CookingOptions: 0
+  m_CookingOptions: 14
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!114 &3466415241648387523
 MonoBehaviour:
@@ -123,6 +123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c89bbd61cf397534c9545f28b84374f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  brushcolor: {fileID: 0}
   oculusInput: {fileID: 0}
   shader: {fileID: 7200000, guid: 0a40b463ece2f354fab781a1cd840409, type: 3}
   initialTexture: {fileID: 2800000, guid: 789270d506716224890fb51c70b60dcc, type: 3}

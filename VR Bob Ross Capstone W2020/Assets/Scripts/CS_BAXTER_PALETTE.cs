@@ -337,7 +337,6 @@ public class CS_BAXTER_PALETTE : MonoBehaviour
         
         brushcolor.SetChannel1(channel1);
         brushcolor.SetChannel2(channel2);
-
     }
     void UpdateShaderBAXTER()
     {
@@ -363,6 +362,7 @@ public class CS_BAXTER_PALETTE : MonoBehaviour
             IDX = hit.textureCoord.x - mousePositionPrev.x;
             IDY = hit.textureCoord.y - mousePositionPrev.y;
 
+            /*
             if (oculusInput.GetMouse1()) MOUSE_DOWN = true;
             if (!oculusInput.GetMouse1())
             {
@@ -374,8 +374,37 @@ public class CS_BAXTER_PALETTE : MonoBehaviour
 
             if (oculusInput.GetMouse2()) MOUSE_PICKUP = true;
             if (!oculusInput.GetMouse2()) MOUSE_PICKUP = false;
-            if (oculusInput.GetMouse3()) MOUSE_DOWN_PIGMENT = true;
-            if (!oculusInput.GetMouse3())
+            */
+            if (brushcolor.GetTouching())
+            {
+                /*
+                Texture2D _texture = new Texture2D(w, h, TextureFormat.RGB24, false);
+                RenderTexture.active = PAINT_RGB_COMPOSITE;
+                _texture.ReadPixels(new Rect(0, 0, PAINT_RGB_COMPOSITE.width, PAINT_RGB_COMPOSITE.height), 0, 0);
+                _texture.Apply();
+
+                Color temp = _texture.GetPixel((int)IDX * w, (int)IDY * h);
+                */
+
+                Texture2D _texture = new Texture2D(w, h, TextureFormat.RGB24, false);
+                RenderTexture.active = PAINT_PIGMENTS_1;
+                _texture.ReadPixels(new Rect(0, 0, PAINT_PIGMENTS_1.width, PAINT_PIGMENTS_1.height), 0, 0);
+                _texture.Apply();
+
+                Color temp = _texture.GetPixel((int)IDX * w, (int)IDY * h);
+                channel1 = temp;
+
+                _texture = new Texture2D(w, h, TextureFormat.RGB24, false);
+                RenderTexture.active = PAINT_PIGMENTS_2;
+                _texture.ReadPixels(new Rect(0, 0, PAINT_PIGMENTS_2.width, PAINT_PIGMENTS_2.height), 0, 0);
+                _texture.Apply();
+
+                Color temp2 = _texture.GetPixel((int)IDX * w, (int)IDY * h);
+                channel2 = temp2;
+
+                MOUSE_DOWN_PIGMENT = true;
+            }
+            if (!brushcolor.GetTouching())
             {
                 MOUSE_DOWN_PIGMENT = false;
                 brush = new Texture2D(w, h, TextureFormat.RGBA32, false, true);

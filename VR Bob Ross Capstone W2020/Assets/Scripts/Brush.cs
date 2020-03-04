@@ -5,6 +5,7 @@ using UnityEngine;
 public class Brush : MonoBehaviour
 {
     Vector4 channel1, channel2;
+    bool touching = false;
 
     // Start is called before the first frame update
     void Start()
@@ -28,5 +29,23 @@ public class Brush : MonoBehaviour
     public void SetChannel2(Vector4 c)
     {
         channel2 = c;
+    }
+
+    public bool GetTouching()
+    {
+        return touching;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        touching = true;
+    }
+    private void OnCollisionStay(Collision collision)
+    {
+        
+    }
+    private void OnCollisionExit(Collision collision)
+    {
+        touching = false;
     }
 }
