@@ -7,6 +7,8 @@ using UnityEngine.Rendering;
 
 public class CS_BAXTER_VR : MonoBehaviour
 {
+    public Brush brushcolor;
+
     public OculusInput oculusInput;
 
     public ComputeShader shader;
@@ -323,7 +325,7 @@ public class CS_BAXTER_VR : MonoBehaviour
 
     void SetColors()
     {
-
+        /*
         if (Input.GetKeyDown("1")) { channel1.Set(1, 0, 0, 0); channel2.Set(0, 0, 0, 0); }
         if (Input.GetKeyDown("2")) { channel1.Set(0, 1, 0, 0); channel2.Set(0, 0, 0, 0); }
         if (Input.GetKeyDown("3")) { channel1.Set(0, 0, 1, 0); channel2.Set(0, 0, 0, 0); }
@@ -333,6 +335,9 @@ public class CS_BAXTER_VR : MonoBehaviour
         if (Input.GetKeyDown("7")) { channel1.Set(0, 0, 0, 0); channel2.Set(0, 0, 1, 0); }
         if (Input.GetKeyDown("8")) { channel1.Set(0, 0, 0, 0); channel2.Set(0, 0, 0, 1); }
         if (Input.GetKeyDown("0")) { channel1.Set(0, 0, 0, 0); channel2.Set(0, 0, 0, 0); }
+        */
+        channel1 = brushcolor.GetChannel1();
+        channel2 = brushcolor.GetChannel2();
     }
     void UpdateShaderBAXTER()
     {
