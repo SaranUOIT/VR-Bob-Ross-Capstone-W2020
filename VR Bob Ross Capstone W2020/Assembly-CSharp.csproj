@@ -63,6 +63,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\External Assets\Trees\CTI Runtime Components\Scripts\CTI_CustomWind.cs" />
+    <Compile Include="Assets\External Assets\Trees\CTI Runtime Components\Scripts\CTI_Utils.cs" />
     <Compile Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Scripts\Antialiasing.cs" />
     <Compile Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Scripts\Bloom.cs" />
     <Compile Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Scripts\BloomAndFlares.cs" />
@@ -443,11 +445,15 @@
     <Compile Include="Assets\Scripts\Hand.cs" />
     <Compile Include="Assets\Scripts\OculusInput.cs" />
     <None Include="Assets\NatureStarterKit2\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
+    <None Include="Assets\External Assets\Trees\CTI Runtime Components\Shaders\CTI_LOD_Billboard_301.shader" />
     <None Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendOneOne.shader" />
     <None Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Shaders\NoiseEffectShaderRGB.shader" />
     <None Include="Assets\NatureStarterKit2\Standard Assets\Effects\ToonShading\Shaders\ToonBasic.shader" />
     <None Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\SeparableWeightedBlurDof34.shader" />
+    <None Include="Assets\External Assets\Trees\CTI Runtime Components\Shaders\Includes\CTI_Builtin4xTreeLibraryTumbling_301.cginc" />
     <None Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Shaders\ShowAlphaChannel.shader" />
+    <None Include="Assets\External Assets\Trees\CTI Runtime Components\Shaders\Includes\CTI_TranslucentLighting_301.cginc" />
+    <None Include="Assets\External Assets\Trees\Getting started.txt" />
     <None Include="Assets\Oculus\Avatar\Resources\Materials\Version1.5\Avatar_PC_SingleComponent.shader" />
     <None Include="Assets\Oculus\Avatar\Samples\CrossPlatform\Readme.txt" />
     <None Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Shaders\SunShaftsComposite.shader" />
@@ -470,6 +476,7 @@
     <None Include="Assets\Oculus\SampleFramework\Core\CustomHands\Materials\Hands_Transparent.shader" />
     <None Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Shaders\Contrast Stretch\MinMaxReduction.shader" />
     <None Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\SSAA.shader" />
+    <None Include="Assets\External Assets\Trees\CTI Runtime Components\Resources\CTI_Camera-DepthNormalTexture_301.shader" />
     <None Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Shaders\RadialBlur.shader" />
     <None Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\DepthOfFieldDX11.shader" />
     <None Include="Assets\Oculus\Avatar\Resources\Materials\Version1.5\Avatar_Mobile_Loader.shader" />
@@ -481,6 +488,10 @@
     <None Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Shaders\frag_ao.cginc" />
     <None Include="Assets\Oculus\SampleFramework\Core\CustomHands\Shaders\Hands_02.shader" />
     <None Include="Assets\Oculus\SampleFramework\Core\Video\Plugins\Android\Audio360\ThirdPartyNotices.txt" />
+    <None Include="Assets\External Assets\Trees\CTI Runtime Components\Shaders\CTI_LOD_Leaves_301.shader" />
+    <None Include="Assets\External Assets\Trees\CTI Runtime Components\Shaders\CTI_LOD_Bark_Array_301.shader" />
+    <None Include="Assets\External Assets\Trees\CTI Runtime Components\Resources\CTI_Internal-DeferredShading.shader" />
+    <None Include="Assets\External Assets\Trees\CTI Runtime Components\Shaders\Includes\CTI_indirect.cginc" />
     <None Include="Assets\NatureStarterKit2\Standard Assets\Effects\ToonShading\Shaders\ToonBasicOutline.shader" />
     <None Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\DepthOfField34.shader" />
     <None Include="Assets\Oculus\Avatar\Resources\Materials\AvatarSurfaceShaderSelfOccluding.shader" />
@@ -492,6 +503,7 @@
     <None Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Shaders\ColorCorrectionCurvesSimple.shader" />
     <None Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Shaders\NoiseEffectShaderYUV.shader" />
     <None Include="Assets\Oculus\Avatar\Samples\SocialStarter\README.txt" />
+    <None Include="Assets\External Assets\Trees\CTI Runtime Components\Shaders\Includes\CTI_BillboardVertex_301.cginc" />
     <None Include="Assets\Oculus\SampleFramework\license.txt" />
     <None Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Shaders\CreaseApply.shader" />
     <None Include="Assets\Oculus\Avatar\Resources\Materials\Version1.5\Avatar_Mobile_CombinedMesh.shader" />
@@ -534,6 +546,7 @@
     <None Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Shaders\Tonemapper.shader" />
     <None Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BrightPassFilter.shader" />
     <None Include="Assets\Oculus\SampleFramework\Usage\HandsTrainExample\Shaders\XingLightShader.shader" />
+    <None Include="Assets\External Assets\Trees\CTI Runtime Components\Resources\CTI_Internal-DeferredReflections.shader" />
     <None Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\FXAA2.shader" />
     <None Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Shaders\ColorCorrection3DLut.shader" />
     <None Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\LensFlareCreate.shader" />
@@ -556,39 +569,40 @@
     <None Include="Assets\SampleScenes\Shaders\Skybox-Procedural.shader" />
     <None Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\FXAAPreset2.shader" />
     <None Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlurAndFlares.shader" />
+    <None Include="Assets\External Assets\Trees\CTI Runtime Components\Shaders\CTI_LOD_Bark_301.shader" />
     <None Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendForBloom.shader" />
     <Reference Include="Unity.Timeline.Editor">
-      <HintPath>C:/Users/Saran/Documents/GitHub/VR-Bob-Ross-Capstone-W2020/VR Bob Ross Capstone W2020/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+      <HintPath>C:/Users/kanbo/OneDrive/Desktop/Bob Ross/VR-Bob-Ross-Capstone-W2020/VR Bob Ross Capstone W2020/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-      <HintPath>C:/Users/Saran/Documents/GitHub/VR-Bob-Ross-Capstone-W2020/VR Bob Ross Capstone W2020/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+      <HintPath>C:/Users/kanbo/OneDrive/Desktop/Bob Ross/VR-Bob-Ross-Capstone-W2020/VR Bob Ross Capstone W2020/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/Saran/Documents/GitHub/VR-Bob-Ross-Capstone-W2020/VR Bob Ross Capstone W2020/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>C:/Users/kanbo/OneDrive/Desktop/Bob Ross/VR-Bob-Ross-Capstone-W2020/VR Bob Ross Capstone W2020/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>C:/Users/Saran/Documents/GitHub/VR-Bob-Ross-Capstone-W2020/VR Bob Ross Capstone W2020/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+      <HintPath>C:/Users/kanbo/OneDrive/Desktop/Bob Ross/VR-Bob-Ross-Capstone-W2020/VR Bob Ross Capstone W2020/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-      <HintPath>C:/Users/Saran/Documents/GitHub/VR-Bob-Ross-Capstone-W2020/VR Bob Ross Capstone W2020/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+      <HintPath>C:/Users/kanbo/OneDrive/Desktop/Bob Ross/VR-Bob-Ross-Capstone-W2020/VR Bob Ross Capstone W2020/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>C:/Users/Saran/Documents/GitHub/VR-Bob-Ross-Capstone-W2020/VR Bob Ross Capstone W2020/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>C:/Users/kanbo/OneDrive/Desktop/Bob Ross/VR-Bob-Ross-Capstone-W2020/VR Bob Ross Capstone W2020/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Postprocessing.Editor">
-      <HintPath>C:/Users/Saran/Documents/GitHub/VR-Bob-Ross-Capstone-W2020/VR Bob Ross Capstone W2020/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
+      <HintPath>C:/Users/kanbo/OneDrive/Desktop/Bob Ross/VR-Bob-Ross-Capstone-W2020/VR Bob Ross Capstone W2020/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-      <HintPath>C:/Users/Saran/Documents/GitHub/VR-Bob-Ross-Capstone-W2020/VR Bob Ross Capstone W2020/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+      <HintPath>C:/Users/kanbo/OneDrive/Desktop/Bob Ross/VR-Bob-Ross-Capstone-W2020/VR Bob Ross Capstone W2020/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Postprocessing.Runtime">
-      <HintPath>C:/Users/Saran/Documents/GitHub/VR-Bob-Ross-Capstone-W2020/VR Bob Ross Capstone W2020/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
+      <HintPath>C:/Users/kanbo/OneDrive/Desktop/Bob Ross/VR-Bob-Ross-Capstone-W2020/VR Bob Ross Capstone W2020/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/Saran/Documents/GitHub/VR-Bob-Ross-Capstone-W2020/VR Bob Ross Capstone W2020/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>C:/Users/kanbo/OneDrive/Desktop/Bob Ross/VR-Bob-Ross-Capstone-W2020/VR Bob Ross Capstone W2020/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-      <HintPath>C:/Users/Saran/Documents/GitHub/VR-Bob-Ross-Capstone-W2020/VR Bob Ross Capstone W2020/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+      <HintPath>C:/Users/kanbo/OneDrive/Desktop/Bob Ross/VR-Bob-Ross-Capstone-W2020/VR Bob Ross Capstone W2020/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.6f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
