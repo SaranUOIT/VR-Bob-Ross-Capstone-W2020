@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6495047100365182809}
   - component: {fileID: 6495047100365182814}
   - component: {fileID: 6495047100365182813}
+  - component: {fileID: 6576097230991592661}
   - component: {fileID: 3466415241648387523}
   m_Layer: 0
   m_Name: VR Canvas
@@ -111,6 +112,33 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &6576097230991592661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6495047100365182788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7592651bee63ae44cb7ce9bb78697e7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_brushScript: {fileID: 0}
+  m_pressureMat: {fileID: 0}
+  m_angleMat: {fileID: 0}
+  m_brushes: []
+  angleSpeed: 4
+  pressureSpeed: 0.3
+  m_brush1: {fileID: 0}
+  m_brush2: {fileID: 0}
+  m_activeBrush: 0
+  m_activeTexture: 0
+  m_pressure: 0.5
+  m_angle: 90
+  m_brushToUseTexture: {fileID: 0}
+  pressureVal: {fileID: 0}
+  angleVal: {fileID: 0}
 --- !u!114 &3466415241648387523
 MonoBehaviour:
   m_ObjectHideFlags: 0
