@@ -325,8 +325,8 @@ public class CS_BAXTER_VR : MonoBehaviour
 
     void SetColors()
     {
-        channel1 = brushcolor.GetChannel1();
-        channel2 = brushcolor.GetChannel2();
+        //channel1 = brushcolor.GetChannel1();
+        //channel2 = brushcolor.GetChannel2();
         if (Input.GetKeyDown("1")) { channel1.Set(1, 0, 0, 0); channel2.Set(0, 0, 0, 0); }
         if (Input.GetKeyDown("2")) { channel1.Set(0, 1, 0, 0); channel2.Set(0, 0, 0, 0); }
         if (Input.GetKeyDown("3")) { channel1.Set(0, 0, 1, 0); channel2.Set(0, 0, 0, 0); }
