@@ -17,7 +17,7 @@ public class OculusInput : MonoBehaviour
         if(triggerDown)
         {
             Mouse1 = true;
-            Debug.Log("Trigger Pressed");
+            //Debug.Log("Trigger Pressed");
         }
         if(triggerUp)
         {

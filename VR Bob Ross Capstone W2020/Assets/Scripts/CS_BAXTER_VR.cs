@@ -325,7 +325,8 @@ public class CS_BAXTER_VR : MonoBehaviour
 
     void SetColors()
     {
-        /*
+        channel1 = brushcolor.GetChannel1();
+        channel2 = brushcolor.GetChannel2();
         if (Input.GetKeyDown("1")) { channel1.Set(1, 0, 0, 0); channel2.Set(0, 0, 0, 0); }
         if (Input.GetKeyDown("2")) { channel1.Set(0, 1, 0, 0); channel2.Set(0, 0, 0, 0); }
         if (Input.GetKeyDown("3")) { channel1.Set(0, 0, 1, 0); channel2.Set(0, 0, 0, 0); }
@@ -335,9 +336,6 @@ public class CS_BAXTER_VR : MonoBehaviour
         if (Input.GetKeyDown("7")) { channel1.Set(0, 0, 0, 0); channel2.Set(0, 0, 1, 0); }
         if (Input.GetKeyDown("8")) { channel1.Set(0, 0, 0, 0); channel2.Set(0, 0, 0, 1); }
         if (Input.GetKeyDown("0")) { channel1.Set(0, 0, 0, 0); channel2.Set(0, 0, 0, 0); }
-        */
-        channel1 = brushcolor.GetChannel1();
-        channel2 = brushcolor.GetChannel2();
     }
     void UpdateShaderBAXTER()
     {
@@ -523,7 +521,7 @@ public class CS_BAXTER_VR : MonoBehaviour
 
             if (MOUSE_PICKUP)
             {
-                Debug.Log("pickup");
+                //Debug.Log("pickup");
                 mousePositionPICKUP.x = mousePositionPrev.x;
                 mousePositionPICKUP.y = mousePositionPrev.y;
                 shader.SetFloat("InputX", mousePositionPICKUP.x);
@@ -598,7 +596,7 @@ public class CS_BAXTER_VR : MonoBehaviour
                 Graphics.CopyTexture(VELOCITY_PAINT_TEMP, VELOCITY_PAINT);
 
                 BRUSH_PAINT_STRENGTH *= BRUSH_PAINT_DEPOSIT_RATE;
-                Debug.Log("paint strength = " + BRUSH_PAINT_STRENGTH);
+                //Debug.Log("paint strength = " + BRUSH_PAINT_STRENGTH);
             }
 
 

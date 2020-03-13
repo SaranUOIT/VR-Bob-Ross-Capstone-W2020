@@ -324,7 +324,9 @@ public class CS_BAXTER_PALETTE : MonoBehaviour
 
     void SetColors()
     {
-        
+        brushcolor.SetChannel1(channel1);
+        brushcolor.SetChannel2(channel2);
+     
         if (Input.GetKeyDown("1")) { channel1.Set(1, 0, 0, 0); channel2.Set(0, 0, 0, 0); }
         if (Input.GetKeyDown("2")) { channel1.Set(0, 1, 0, 0); channel2.Set(0, 0, 0, 0); }
         if (Input.GetKeyDown("3")) { channel1.Set(0, 0, 1, 0); channel2.Set(0, 0, 0, 0); }
@@ -334,9 +336,6 @@ public class CS_BAXTER_PALETTE : MonoBehaviour
         if (Input.GetKeyDown("7")) { channel1.Set(0, 0, 0, 0); channel2.Set(0, 0, 1, 0); }
         if (Input.GetKeyDown("8")) { channel1.Set(0, 0, 0, 0); channel2.Set(0, 0, 0, 1); }
         if (Input.GetKeyDown("0")) { channel1.Set(0, 0, 0, 0); channel2.Set(0, 0, 0, 0); }
-        
-        brushcolor.SetChannel1(channel1);
-        brushcolor.SetChannel2(channel2);
     }
     void UpdateShaderBAXTER()
     {
@@ -362,7 +361,7 @@ public class CS_BAXTER_PALETTE : MonoBehaviour
             IDX = hit.textureCoord.x - mousePositionPrev.x;
             IDY = hit.textureCoord.y - mousePositionPrev.y;
 
-            /*
+            
             if (oculusInput.GetMouse1()) MOUSE_DOWN = true;
             if (!oculusInput.GetMouse1())
             {
@@ -374,8 +373,8 @@ public class CS_BAXTER_PALETTE : MonoBehaviour
 
             if (oculusInput.GetMouse2()) MOUSE_PICKUP = true;
             if (!oculusInput.GetMouse2()) MOUSE_PICKUP = false;
-            */
-            if (brushcolor.GetTouching())
+            
+            if (brushcolor.GetTouchEnter())
             {
                 /*
                 Texture2D _texture = new Texture2D(w, h, TextureFormat.RGB24, false);
@@ -405,6 +404,17 @@ public class CS_BAXTER_PALETTE : MonoBehaviour
                 MOUSE_DOWN_PIGMENT = true;
             }
             if (!brushcolor.GetTouching())
+            {
+                MOUSE_DOWN_PIGMENT = false;
+                brush = new Texture2D(w, h, TextureFormat.RGBA32, false, true);
+                brush2 = new Texture2D(w, h, TextureFormat.RGBA32, false, true);
+                //BRUSH_MASK  = new Texture2D(w,h, TextureFormat.RGBA32,false,true);
+                // for (int i = 0; i < maskPixels.Length; i++) maskPixels[i] = Color.black;
+                // BRUSH_MASK.SetPixels(maskPixels);
+                // BRUSH_MASK.Apply();
+            }
+            if (oculusInput.GetMouse3()) MOUSE_DOWN_PIGMENT = true;
+            if (!oculusInput.GetMouse3())
             {
                 MOUSE_DOWN_PIGMENT = false;
                 brush = new Texture2D(w, h, TextureFormat.RGBA32, false, true);
@@ -552,7 +562,7 @@ public class CS_BAXTER_PALETTE : MonoBehaviour
 
             if (MOUSE_PICKUP)
             {
-                Debug.Log("pickup");
+                //Debug.Log("pickup");
                 mousePositionPICKUP.x = mousePositionPrev.x;
                 mousePositionPICKUP.y = mousePositionPrev.y;
                 shader.SetFloat("InputX", mousePositionPICKUP.x);
@@ -627,7 +637,7 @@ public class CS_BAXTER_PALETTE : MonoBehaviour
                 Graphics.CopyTexture(VELOCITY_PAINT_TEMP, VELOCITY_PAINT);
 
                 BRUSH_PAINT_STRENGTH *= BRUSH_PAINT_DEPOSIT_RATE;
-                Debug.Log("paint strength = " + BRUSH_PAINT_STRENGTH);
+                //Debug.Log("paint strength = " + BRUSH_PAINT_STRENGTH);
             }
 
 
