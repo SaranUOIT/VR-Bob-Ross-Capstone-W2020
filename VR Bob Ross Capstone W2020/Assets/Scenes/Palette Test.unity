@@ -154,7 +154,7 @@ MonoBehaviour:
   brushcolor: {fileID: 1199085169}
   oculusInput: {fileID: 1199085170}
   shader: {fileID: 7200000, guid: 0a40b463ece2f354fab781a1cd840409, type: 3}
-  initialTexture: {fileID: 2800000, guid: 789270d506716224890fb51c70b60dcc, type: 3}
+  initialTexture: {fileID: 2800000, guid: 431f36e66ee6ece4baccb028bf9ccdd4, type: 3}
   brush: {fileID: 0}
   brush2: {fileID: 0}
   BRUSH_MASK: {fileID: 0}
@@ -387,7 +387,7 @@ PrefabInstance:
         type: 3}
       propertyPath: initialBrush
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2800000, guid: 7c6f123f3ab224dfd80b2364e44a54e6, type: 3}
     - target: {fileID: 6576097230991592661, guid: 8140eb9fb80d35f42923be4211b3e7fd,
         type: 3}
       propertyPath: m_brushes.Array.size
