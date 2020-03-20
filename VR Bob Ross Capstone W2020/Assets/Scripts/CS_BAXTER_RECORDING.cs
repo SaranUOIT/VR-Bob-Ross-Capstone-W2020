@@ -5,9 +5,10 @@ using UnityEngine.Rendering;
 
 
 
-public class CS_BAXTER_PALETTE : MonoBehaviour
+public class CS_BAXTER_RECORDING : MonoBehaviour
 {
     public Brush brushcolor;
+
     public OculusInput oculusInput;
 
     public ComputeShader shader;
@@ -324,9 +325,8 @@ public class CS_BAXTER_PALETTE : MonoBehaviour
 
     void SetColors()
     {
-        brushcolor.SetChannel1(channel1);
-        brushcolor.SetChannel2(channel2);
-     
+        //channel1 = brushcolor.GetChannel1();
+        //channel2 = brushcolor.GetChannel2();
         if (Input.GetKeyDown("1")) { channel1.Set(1, 0, 0, 0); channel2.Set(0, 0, 0, 0); }
         if (Input.GetKeyDown("2")) { channel1.Set(0, 1, 0, 0); channel2.Set(0, 0, 0, 0); }
         if (Input.GetKeyDown("3")) { channel1.Set(0, 0, 1, 0); channel2.Set(0, 0, 0, 0); }
@@ -361,7 +361,6 @@ public class CS_BAXTER_PALETTE : MonoBehaviour
             IDX = hit.textureCoord.x - mousePositionPrev.x;
             IDY = hit.textureCoord.y - mousePositionPrev.y;
 
-            
             if (oculusInput.GetMouse1()) MOUSE_DOWN = true;
             if (!oculusInput.GetMouse1())
             {
@@ -373,47 +372,6 @@ public class CS_BAXTER_PALETTE : MonoBehaviour
 
             if (oculusInput.GetMouse2()) MOUSE_PICKUP = true;
             if (!oculusInput.GetMouse2()) MOUSE_PICKUP = false;
-            
-            if (brushcolor.GetTouchEnter())
-            {
-                /*
-                Texture2D _texture = new Texture2D(w, h, TextureFormat.RGB24, false);
-                RenderTexture.active = PAINT_RGB_COMPOSITE;
-                _texture.ReadPixels(new Rect(0, 0, PAINT_RGB_COMPOSITE.width, PAINT_RGB_COMPOSITE.height), 0, 0);
-                _texture.Apply();
-
-                Color temp = _texture.GetPixel((int)IDX * w, (int)IDY * h);
-                */
-
-                // Crashes because of memory leak
-                Texture2D _texture = new Texture2D(w, h, TextureFormat.RGB24, false);
-                RenderTexture.active = PAINT_PIGMENTS_1;
-                _texture.ReadPixels(new Rect(0, 0, PAINT_PIGMENTS_1.width, PAINT_PIGMENTS_1.height), 0, 0);
-                _texture.Apply();
-
-                Color temp = _texture.GetPixel((int)IDX * w, (int)IDY * h);
-                channel1 = temp;
-
-                _texture = new Texture2D(w, h, TextureFormat.RGB24, false);
-                RenderTexture.active = PAINT_PIGMENTS_2;
-                _texture.ReadPixels(new Rect(0, 0, PAINT_PIGMENTS_2.width, PAINT_PIGMENTS_2.height), 0, 0);
-                _texture.Apply();
-
-                Color temp2 = _texture.GetPixel((int)IDX * w, (int)IDY * h);
-                channel2 = temp2;
-
-                MOUSE_DOWN_PIGMENT = true;
-            }
-            if (!brushcolor.GetTouching())
-            {
-                MOUSE_DOWN_PIGMENT = false;
-                brush = new Texture2D(w, h, TextureFormat.RGBA32, false, true);
-                brush2 = new Texture2D(w, h, TextureFormat.RGBA32, false, true);
-                //BRUSH_MASK  = new Texture2D(w,h, TextureFormat.RGBA32,false,true);
-                // for (int i = 0; i < maskPixels.Length; i++) maskPixels[i] = Color.black;
-                // BRUSH_MASK.SetPixels(maskPixels);
-                // BRUSH_MASK.Apply();
-            }
             if (oculusInput.GetMouse3()) MOUSE_DOWN_PIGMENT = true;
             if (!oculusInput.GetMouse3())
             {
@@ -480,7 +438,7 @@ public class CS_BAXTER_PALETTE : MonoBehaviour
                                                           //if(IDX == 0 ) THETA = -DIR*Mathf.PI;
                                                           //while(THETA > Mathf.PI) THETA -= Mathf.PI;
                                                           //while(THETA < -Mathf.PI) THETA += Mathf.PI;
-                                                          //Debug.Log("IDX:" + IDX + " IDY:" + IDY + " Theta=" + angle * RAD2DEG);
+            //Debug.Log("IDX:" + IDX + " IDY:" + IDY + " Theta=" + angle * RAD2DEG);
 
             int bw = BRUSH_WIDTH;
             float bwf = (float)(bw / 2) / (float)brush.width;
@@ -681,10 +639,12 @@ public class CS_BAXTER_PALETTE : MonoBehaviour
 
     }
 
+    int savedImageCount = 1;
 
     // Update is called once per frame
     void Update()
     {
+        SaveTextureAsPNG(PAINT_RGB_COMPOSITE, "saved" + savedImageCount + ".png");
         UpdateShaderBAXTER();
     }
 

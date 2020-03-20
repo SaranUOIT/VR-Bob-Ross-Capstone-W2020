@@ -724,7 +724,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4897607310870066, guid: a9d2de84afb308a4796cc671d3432b4d, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4897607310870066, guid: a9d2de84afb308a4796cc671d3432b4d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1010,18 +1010,18 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1150765373}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -2.5}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.001, y: 0.001, z: 0.001}
   m_Children:
   - {fileID: 33570454}
   - {fileID: 2117438544}
   - {fileID: 259577672}
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_Father: {fileID: 1654976814}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -1.01, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1029, y: 423}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1150765378
@@ -1111,7 +1111,7 @@ PrefabInstance:
     - target: {fileID: 401610592241854303, guid: da6dba654d72a684c94c7ec04e695332,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 401610592241854303, guid: da6dba654d72a684c94c7ec04e695332,
         type: 3}
@@ -1133,6 +1133,12 @@ PrefabInstance:
 --- !u!20 &1654976813 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 401610592240336329, guid: da6dba654d72a684c94c7ec04e695332,
+    type: 3}
+  m_PrefabInstance: {fileID: 1654976812}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1654976814 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 404250715687143133, guid: da6dba654d72a684c94c7ec04e695332,
     type: 3}
   m_PrefabInstance: {fileID: 1654976812}
   m_PrefabAsset: {fileID: 0}
