@@ -6,6 +6,9 @@ public class AnimationControls : MonoBehaviour
 {
     Animator anim;
     float speed = 0.0f;
+
+    public Transform handRotation;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -15,8 +18,26 @@ public class AnimationControls : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(speed);
 
+        // X Button on Left Controller
+        if (OVRInput.GetDown(OVRInput.Button.One, OVRInput.Controller.LTouch))
+        {
+            float angle = handRotation.localEulerAngles.z;
+            angle = (angle > 180) ? angle - 360 : angle;
+
+            if (angle >= 90)
+            {
+                angle = 90;
+            }
+            if (angle <= -90)
+            {
+                angle = -90;
+            }
+            //Debug.Log("Z: " + angle);
+            speed = angle / 90;
+        }
+
+        //Debug.Log("Speed: " + speed);
         anim.SetFloat("Speed", speed);
     }
 
