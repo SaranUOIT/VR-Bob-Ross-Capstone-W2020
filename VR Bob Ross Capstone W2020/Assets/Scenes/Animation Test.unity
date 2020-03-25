@@ -1095,7 +1095,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 714d694fe701f2a4e85d887365b437a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  handRotation: {fileID: 1654976814}
+  handRotation: {fileID: 1320722994}
+--- !u!4 &1320722994 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 401610592241941051, guid: da6dba654d72a684c94c7ec04e695332,
+    type: 3}
+  m_PrefabInstance: {fileID: 1654976812}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1654976812
 PrefabInstance:
   m_ObjectHideFlags: 0
