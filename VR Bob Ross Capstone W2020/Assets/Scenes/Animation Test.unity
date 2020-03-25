@@ -694,6 +694,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UIHelpers
       objectReference: {fileID: 0}
+    - target: {fileID: 1732808951507650, guid: a9d2de84afb308a4796cc671d3432b4d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4897607310870066, guid: a9d2de84afb308a4796cc671d3432b4d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -988,7 +992,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1150765375
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1091,7 +1095,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 714d694fe701f2a4e85d887365b437a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  handRotation: {fileID: 933242836}
+  handRotation: {fileID: 1654976814}
 --- !u!1001 &1654976812
 PrefabInstance:
   m_ObjectHideFlags: 0
