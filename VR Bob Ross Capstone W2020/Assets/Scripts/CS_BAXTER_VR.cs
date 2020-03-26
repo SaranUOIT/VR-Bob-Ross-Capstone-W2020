@@ -11,6 +11,8 @@ public class CS_BAXTER_VR : MonoBehaviour
 
     public OculusInput oculusInput;
 
+    public GameObject brushModel;
+
     public ComputeShader shader;
     //public RenderTexture tex,tex2,V,V2,Pressure,density,brush2;
     [SerializeField] public Texture2D initialTexture;
@@ -76,6 +78,8 @@ public class CS_BAXTER_VR : MonoBehaviour
     public Vector3 mousePosition;
     public Vector3 mousePositionPrev;
     public Vector3 mousePositionPICKUP;
+
+    public float brushAngle, brushDistance;
 
     Vector4 channel1, channel2;
     Color color, color2;
@@ -356,6 +360,9 @@ public class CS_BAXTER_VR : MonoBehaviour
         mousePositionPrev = mousePosition;
         if (Physics.Raycast(ray, out hit))
         {
+            brushAngle = 90 - Vector3.Angle(ray.direction, hit.normal);
+            brushDistance = Vector3.Distance(hit.point, brushModel.transform.position);
+
             float IDX, IDY;
             mousePosition = hit.textureCoord;
             IDX = hit.textureCoord.x - mousePositionPrev.x;

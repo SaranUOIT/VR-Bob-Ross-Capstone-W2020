@@ -4,9 +4,9 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.UI;
 
-public class BrushPicker : MonoBehaviour
+public class VRBrushPicker : MonoBehaviour
 {
-    public CS_BAXTER m_brushScript;
+    public CS_BAXTER_VR m_brushScript;
     public Material m_pressureMat;
     public Material m_angleMat;
 
@@ -25,10 +25,9 @@ public class BrushPicker : MonoBehaviour
     public int m_activeBrush = 0;
     public int m_activeTexture = 0;
     
-    
-    [Range(0.5f, 1.0f)]
+    [Range(0.0f, 1.0f)]
     public float m_pressure = 0.5f;
-    
+
     [Range(0.0f, 90.0f)]
     public float m_angle = 90.0f;
 
@@ -38,24 +37,25 @@ public class BrushPicker : MonoBehaviour
 
     public Text pressureVal;
     public Text angleVal;
-    
 
-    RenderTexture CreateRenderTexture(int w, int h, int type=0)
+    public GameObject BrushCollider;
+
+    RenderTexture CreateRenderTexture(int w, int h, int type = 0)
     {
-    	var format = RenderTextureFormat.ARGBFloat;
-    	if(type == 1) format = RenderTextureFormat.RFloat;
-    	
-    	RenderTexture theTex;
-    	theTex = new RenderTexture(w,h,0, format);
-    	theTex.enableRandomWrite = true;
-    	theTex.Create();
-    	return theTex;
+        var format = RenderTextureFormat.ARGBFloat;
+        if (type == 1) format = RenderTextureFormat.RFloat;
+
+        RenderTexture theTex;
+        theTex = new RenderTexture(w, h, 0, format);
+        theTex.enableRandomWrite = true;
+        theTex.Create();
+        return theTex;
     }
 
-    void InitRenderTex(int w, int h) 
+    void InitRenderTex(int w, int h)
     {
-        m_brushToUse = CreateRenderTexture(w,h);
-        m_angledBrush = CreateRenderTexture(w,h);
+        m_brushToUse = CreateRenderTexture(w, h);
+        m_angledBrush = CreateRenderTexture(w, h);
     }
 
     private void ApplyPressure()
@@ -87,13 +87,13 @@ public class BrushPicker : MonoBehaviour
         for (int i = 0; i < m_brushes[m_activeBrush].m_strokes.Count; i++)
         {
             float angle = m_brushes[m_activeBrush].m_strokes[i].m_angle;
-            
-            if (m_angle > angle && m_angle < lastAngle)
+
+            if (m_angle >= angle && m_angle <= lastAngle)
             {
                 m_brush1 = m_brushes[m_activeBrush].m_strokes[i];
             }
 
-            if (m_angle < angle)
+            if (m_angle <= angle)
             {
                 m_brush2 = m_brushes[m_activeBrush].m_strokes[i];
             }
@@ -115,9 +115,19 @@ public class BrushPicker : MonoBehaviour
 
         //Gives the current brush that is to be used, to the Baxter script
         m_brushScript.initialBrush = m_brushToUseTexture;
+
+        m_angle = Mathf.Clamp(m_brushScript.brushAngle, 0.0f, 90.0f);
     }
 
-    private void Start() 
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject == BrushCollider)
+        {
+            m_pressure = Mathf.Clamp(1 - m_brushScript.brushDistance, 0.0f, 1.0f);
+        }
+    }
+
+    private void Start()
     {
         //Formats texture
         m_brushToUseTexture = new Texture2D(256, 256, TextureFormat.RGB24, false);
@@ -130,34 +140,40 @@ public class BrushPicker : MonoBehaviour
         UpdateBrush();
     }
 
-    void KeyboardControls()
-    {
-        if (Input.GetKey(KeyCode.O))
-        {
-            m_pressure = m_pressure - (pressureSpeed * Time.deltaTime);
-        }
-        if (Input.GetKey(KeyCode.P))
-        {
-            m_pressure = m_pressure + (pressureSpeed * Time.deltaTime);
-        }
+    //void KeyboardControls()
+    //{
+    //    if (Input.GetKey(KeyCode.O))
+    //    {
+    //        m_pressure = m_pressure - (pressureSpeed * Time.deltaTime);
+    //    }
+    //    if (Input.GetKey(KeyCode.P))
+    //    {
+    //        m_pressure = m_pressure + (pressureSpeed * Time.deltaTime);
+    //    }
 
-        if (Input.GetKey(KeyCode.Minus))
-        {
-            m_angle = m_angle - (angleSpeed * Time.deltaTime);
-        }
-        if (Input.GetKey(KeyCode.Equals))
-        {
-            m_angle = m_angle + (angleSpeed * Time.deltaTime);
-        }
+    //    if (Input.GetKey(KeyCode.Minus))
+    //    {
+    //        m_angle = m_angle - (angleSpeed * Time.deltaTime);
+    //    }
+    //    if (Input.GetKey(KeyCode.Equals))
+    //    {
+    //        m_angle = m_angle + (angleSpeed * Time.deltaTime);
+    //    }
 
-        m_angle = Mathf.Clamp(m_angle, 0.0f, 90.0f);
-        m_pressure = Mathf.Clamp(m_pressure, 0.0f, 1.0f);
-    }
+    //    m_angle = Mathf.Clamp(m_angle, 0.0f, 90.0f);
+    //    m_pressure = Mathf.Clamp(m_pressure, 0.0f, 1.0f);
+    //}
 
     void UpdateNumDisplay()
     {
-        pressureVal.text = (m_pressure * 100.0f).ToString() + "%";
-        angleVal.text = m_angle.ToString() + " degrees";
+        if (pressureVal != null)
+        {
+            pressureVal.text = (m_pressure * 100.0f).ToString() + "%";
+        }
+        if (angleVal != null)
+        {
+            angleVal.text = m_angle.ToString() + " degrees";
+        }
     }
 
     // Update is called once per frame
@@ -165,7 +181,7 @@ public class BrushPicker : MonoBehaviour
     {
         UpdateBrush();
 
-        KeyboardControls();
+        //KeyboardControls();
 
         UpdateNumDisplay();
     }
