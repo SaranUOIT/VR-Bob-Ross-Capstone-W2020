@@ -21,7 +21,7 @@ public class AnimationControls : MonoBehaviour
     {
 
         // X Button on Left Controller
-        if (true)//OVRInput.Get(OVRInput.Button.One, OVRInput.Controller.LTouch))
+        if (OVRInput.Get(OVRInput.Button.One, OVRInput.Controller.LTouch))
         {
             float angle = handRotation.localEulerAngles.z;
             angle = (angle > 180) ? angle - 360 : angle;
@@ -38,7 +38,8 @@ public class AnimationControls : MonoBehaviour
             }
             Debug.Log("Z: " + angle);
             speed = angle / 65;
-            UIRotation.eulerAngles = new Vector3(0, 0, angle);
+            UIRotation.localEulerAngles = new Vector3(0, 0, angle);
+            
         }
 
         Debug.Log("Speed: " + speed);
