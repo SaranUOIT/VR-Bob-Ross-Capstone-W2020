@@ -7,6 +7,7 @@ public class OculusInput : MonoBehaviour
     bool Mouse1;
     bool Mouse2;
     bool Mouse3;
+    public GameObject BrushTip;
 
     // Update is called once per frame
     void Update()
@@ -44,7 +45,7 @@ public class OculusInput : MonoBehaviour
 
     public Ray CreateRay()
     {
-        Ray ray = new Ray(transform.position, transform.forward);
+        Ray ray = new Ray(BrushTip.transform.position, BrushTip.transform.forward);
         return ray;
     }
 

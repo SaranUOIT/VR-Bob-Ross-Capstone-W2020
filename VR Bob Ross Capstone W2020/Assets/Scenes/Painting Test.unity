@@ -350,5 +350,25 @@ PrefabInstance:
       propertyPath: camera
       value: 
       objectReference: {fileID: 48343543}
+    - target: {fileID: 8076656253652844017, guid: 7fc44c342e54812419f4c93685a97d96,
+        type: 3}
+      propertyPath: initialBrush
+      value: 
+      objectReference: {fileID: 2800000, guid: 4935c2fe7d4df8645b67912bf66b51d1, type: 3}
+    - target: {fileID: 8076656253652844017, guid: 7fc44c342e54812419f4c93685a97d96,
+        type: 3}
+      propertyPath: BRUSH_WIDTH
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 1420586063582907996, guid: 7fc44c342e54812419f4c93685a97d96,
+        type: 3}
+      propertyPath: m_angle
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 1420586063582907996, guid: 7fc44c342e54812419f4c93685a97d96,
+        type: 3}
+      propertyPath: m_pressure
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7fc44c342e54812419f4c93685a97d96, type: 3}

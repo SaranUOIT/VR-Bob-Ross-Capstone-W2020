@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6495047100365182809}
   - component: {fileID: 6495047100365182814}
   - component: {fileID: 6495047100365182813}
-  - component: {fileID: 6576097230991592661}
+  - component: {fileID: 2189493818410950708}
   - component: {fileID: 3466415241648387523}
   m_Layer: 0
   m_Name: VR Canvas
@@ -112,7 +112,7 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &6576097230991592661
+--- !u!114 &2189493818410950708
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -121,13 +121,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 6495047100365182788}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7592651bee63ae44cb7ce9bb78697e7f, type: 3}
+  m_Script: {fileID: 11500000, guid: 3ba25d2542f137b4bbe4a222327097e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_brushScript: {fileID: 0}
-  m_pressureMat: {fileID: 0}
-  m_angleMat: {fileID: 0}
-  m_brushes: []
+  m_brushScript: {fileID: 3466415241648387523}
+  m_pressureMat: {fileID: 2100000, guid: 3f7600268ae1a384aa0635c04867f8f6, type: 2}
+  m_angleMat: {fileID: 2100000, guid: bf36854913191d541919a39efcf42308, type: 2}
+  m_brushes:
+  - {fileID: 11400000, guid: c189f4d998cd2e04f8a7049e84bd645b, type: 2}
   angleSpeed: 4
   pressureSpeed: 0.3
   m_brush1: {fileID: 0}
@@ -175,7 +176,7 @@ MonoBehaviour:
   BRUSH_VOLUME: {fileID: 0}
   HEIGHT_MAP: {fileID: 0}
   NORMAL_MAP: {fileID: 0}
-  initialBrush: {fileID: 2800000, guid: 7c6f123f3ab224dfd80b2364e44a54e6, type: 3}
+  initialBrush: {fileID: 2800000, guid: 07f2a3354f514c446a0f1939499c4862, type: 3}
   camera: {fileID: 0}
   mousePosition: {x: 0, y: 0, z: 0}
   mousePositionPrev: {x: 0, y: 0, z: 0}

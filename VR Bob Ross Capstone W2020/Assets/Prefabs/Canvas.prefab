@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7653907866708943516}
   - component: {fileID: 7653907866708943515}
   - component: {fileID: 7653907866708943512}
+  - component: {fileID: 1420586063582907996}
   - component: {fileID: 8076656253652844017}
   m_Layer: 0
   m_Name: Canvas
@@ -111,6 +112,34 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 0
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1420586063582907996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7653907866708943489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7592651bee63ae44cb7ce9bb78697e7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_brushScript: {fileID: 8076656253652844017}
+  m_pressureMat: {fileID: 2100000, guid: 3f7600268ae1a384aa0635c04867f8f6, type: 2}
+  m_angleMat: {fileID: 2100000, guid: bf36854913191d541919a39efcf42308, type: 2}
+  m_brushes:
+  - {fileID: 11400000, guid: c189f4d998cd2e04f8a7049e84bd645b, type: 2}
+  angleSpeed: 4
+  pressureSpeed: 0.3
+  m_brush1: {fileID: 0}
+  m_brush2: {fileID: 0}
+  m_activeBrush: 0
+  m_activeTexture: 0
+  m_pressure: 0.5
+  m_angle: 90
+  m_brushToUseTexture: {fileID: 0}
+  pressureVal: {fileID: 0}
+  angleVal: {fileID: 0}
 --- !u!114 &8076656253652844017
 MonoBehaviour:
   m_ObjectHideFlags: 0
