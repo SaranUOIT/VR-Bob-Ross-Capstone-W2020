@@ -719,17 +719,17 @@ PrefabInstance:
     - target: {fileID: 6495047100365182815, guid: 8140eb9fb80d35f42923be4211b3e7fd,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6495047100365182815, guid: 8140eb9fb80d35f42923be4211b3e7fd,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6495047100365182815, guid: 8140eb9fb80d35f42923be4211b3e7fd,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6495047100365182815, guid: 8140eb9fb80d35f42923be4211b3e7fd,
         type: 3}
@@ -749,12 +749,12 @@ PrefabInstance:
     - target: {fileID: 6495047100365182815, guid: 8140eb9fb80d35f42923be4211b3e7fd,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 6495047100365182815, guid: 8140eb9fb80d35f42923be4211b3e7fd,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 180
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3466415241648387523, guid: 8140eb9fb80d35f42923be4211b3e7fd,
         type: 3}
@@ -771,15 +771,20 @@ PrefabInstance:
       propertyPath: brushModel
       value: 
       objectReference: {fileID: 2107513237}
-    - target: {fileID: 2189493818410950708, guid: 8140eb9fb80d35f42923be4211b3e7fd,
+    - target: {fileID: 3466415241648387523, guid: 8140eb9fb80d35f42923be4211b3e7fd,
         type: 3}
-      propertyPath: m_angle
-      value: 0
+      propertyPath: BRUSH_WIDTH
+      value: 80
       objectReference: {fileID: 0}
-    - target: {fileID: 2189493818410950708, guid: 8140eb9fb80d35f42923be4211b3e7fd,
+    - target: {fileID: 3466415241648387523, guid: 8140eb9fb80d35f42923be4211b3e7fd,
         type: 3}
-      propertyPath: m_pressure
-      value: 0
+      propertyPath: BRUSH_PAINT_DEPOSIT_RATE
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3466415241648387523, guid: 8140eb9fb80d35f42923be4211b3e7fd,
+        type: 3}
+      propertyPath: INITIAL_BRUSH_PAINT_STRENGTH
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 2189493818410950708, guid: 8140eb9fb80d35f42923be4211b3e7fd,
         type: 3}

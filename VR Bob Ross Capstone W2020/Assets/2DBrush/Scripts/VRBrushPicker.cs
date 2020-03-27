@@ -38,7 +38,7 @@ public class VRBrushPicker : MonoBehaviour
     public Text pressureVal;
     public Text angleVal;
 
-    public GameObject BrushCollider;
+    //public GameObject BrushCollider;
 
     RenderTexture CreateRenderTexture(int w, int h, int type = 0)
     {
@@ -119,13 +119,13 @@ public class VRBrushPicker : MonoBehaviour
         m_angle = Mathf.Clamp(m_brushScript.brushAngle, 0.0f, 90.0f);
     }
 
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.gameObject == BrushCollider)
-        {
-            m_pressure = Mathf.Clamp(1 - m_brushScript.brushDistance, 0.0f, 1.0f);
-        }
-    }
+    //private void OnTriggerStay(Collider other)
+    //{
+    //    if (other.gameObject == BrushCollider)
+    //    {
+    //        m_pressure = Mathf.Clamp(1 - m_brushScript.brushDistance, 0.0f, 1.0f);
+    //    }
+    //}
 
     private void Start()
     {
@@ -140,29 +140,29 @@ public class VRBrushPicker : MonoBehaviour
         UpdateBrush();
     }
 
-    //void KeyboardControls()
-    //{
-    //    if (Input.GetKey(KeyCode.O))
-    //    {
-    //        m_pressure = m_pressure - (pressureSpeed * Time.deltaTime);
-    //    }
-    //    if (Input.GetKey(KeyCode.P))
-    //    {
-    //        m_pressure = m_pressure + (pressureSpeed * Time.deltaTime);
-    //    }
+    void KeyboardControls()
+    {
+        if (Input.GetKey(KeyCode.O))
+        {
+            m_pressure = m_pressure - (pressureSpeed * Time.deltaTime);
+        }
+        if (Input.GetKey(KeyCode.P))
+        {
+            m_pressure = m_pressure + (pressureSpeed * Time.deltaTime);
+        }
 
-    //    if (Input.GetKey(KeyCode.Minus))
-    //    {
-    //        m_angle = m_angle - (angleSpeed * Time.deltaTime);
-    //    }
-    //    if (Input.GetKey(KeyCode.Equals))
-    //    {
-    //        m_angle = m_angle + (angleSpeed * Time.deltaTime);
-    //    }
+        //if (Input.GetKey(KeyCode.Minus))
+        //{
+        //    m_angle = m_angle - (angleSpeed * Time.deltaTime);
+        //}
+        //if (Input.GetKey(KeyCode.Equals))
+        //{
+        //    m_angle = m_angle + (angleSpeed * Time.deltaTime);
+        //}
 
-    //    m_angle = Mathf.Clamp(m_angle, 0.0f, 90.0f);
-    //    m_pressure = Mathf.Clamp(m_pressure, 0.0f, 1.0f);
-    //}
+        //m_angle = Mathf.Clamp(m_angle, 0.0f, 90.0f);
+        m_pressure = Mathf.Clamp(m_pressure, 0.0f, 1.0f);
+    }
 
     void UpdateNumDisplay()
     {
@@ -181,8 +181,8 @@ public class VRBrushPicker : MonoBehaviour
     {
         UpdateBrush();
 
-        //KeyboardControls();
+        KeyboardControls();
 
-        UpdateNumDisplay();
+        //UpdateNumDisplay();
     }
 }

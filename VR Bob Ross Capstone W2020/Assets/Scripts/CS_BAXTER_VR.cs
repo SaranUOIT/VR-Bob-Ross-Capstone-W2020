@@ -11,7 +11,7 @@ public class CS_BAXTER_VR : MonoBehaviour
 
     public OculusInput oculusInput;
 
-    public GameObject brushModel;
+    //public GameObject brushModel;
 
     public ComputeShader shader;
     //public RenderTexture tex,tex2,V,V2,Pressure,density,brush2;
@@ -141,7 +141,7 @@ public class CS_BAXTER_VR : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        brushAngle = 90;
         mousePositionPrev = new Vector3(0, 0, 0);
         mousePosition = new Vector3(0, 0, 0);
         channel1 = new Vector4(0, 0, 0, 0);
@@ -360,9 +360,6 @@ public class CS_BAXTER_VR : MonoBehaviour
         mousePositionPrev = mousePosition;
         if (Physics.Raycast(ray, out hit))
         {
-            brushAngle = 90 - Vector3.Angle(ray.direction, hit.normal);
-            brushDistance = Vector3.Distance(hit.point, brushModel.transform.position);
-
             float IDX, IDY;
             mousePosition = hit.textureCoord;
             IDX = hit.textureCoord.x - mousePositionPrev.x;
@@ -546,7 +543,8 @@ public class CS_BAXTER_VR : MonoBehaviour
             }
             if (MOUSE_DOWN || MOUSE_DOWN_PIGMENT)
             {
-
+                brushAngle = Vector3.Angle(ray.direction, hit.normal) - 90;
+                //brushDistance = Vector3.Distance(hit.point, brushModel.transform.position);
 
                 shader.SetFloat("InputX", hit.textureCoord.x);
                 shader.SetFloat("InputY", hit.textureCoord.y);
