@@ -38,7 +38,7 @@ public class AnimationControls : MonoBehaviour
             }
             Debug.Log("Z: " + angle);
             speed = angle / 65;
-            UIRotation.localEulerAngles = new Vector3(0, 0, angle);
+            UIRotation.localEulerAngles = new Vector3(0, 0, -angle);
             
         }
 
