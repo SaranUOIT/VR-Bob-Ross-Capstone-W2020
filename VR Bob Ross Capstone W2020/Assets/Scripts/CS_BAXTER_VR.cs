@@ -80,7 +80,7 @@ public class CS_BAXTER_VR : MonoBehaviour
     public Vector3 mousePositionPICKUP;
 
     public float brushAngle, brushDistance;
-
+    float angle;
     Vector4 channel1, channel2;
     Color color, color2;
     Color[] maskPixels;
@@ -141,6 +141,7 @@ public class CS_BAXTER_VR : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        angle = 0.0f;
         brushAngle = 90;
         mousePositionPrev = new Vector3(0, 0, 0);
         mousePosition = new Vector3(0, 0, 0);
@@ -401,7 +402,6 @@ public class CS_BAXTER_VR : MonoBehaviour
             float RAD2DEG = 180.0f / Mathf.PI;
             //	if(THETA == 0.0f && DIR == -1) THETA = -Mathf.PI;
             //float angle=(Mathf.Abs(Mathf.Atan2(IDY,IDX)));// + 360.0f)%360.0f; // 0.. 2pi
-            float angle = 0.0f;//
             angle = ((Mathf.Atan2(IDY, IDX)));
             if (angle < 0) angle = Mathf.PI * 2.0f - (-angle);
             //if(angle > 2.0f*Mathf.PI) angle = angle - Mathf.PI*2.0f;
